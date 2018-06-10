@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+<!--这个是总配置文件  因为spring默认只会加载一次properties文件-->
+    <context:property-placeholder location="classpath:properties/*.properties"/>
+
+    <import resource="applicationContext-*.xml"/>
+    <!--所以说import的作用还是很明显 可以多次加入properties文件-->
+</beans>
